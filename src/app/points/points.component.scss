@@ -1,0 +1,44 @@
+mat-form-field{
+  margin-left: 10%;
+}
+.mat-column-position{
+  width: 20px;
+  padding-right: 24px;
+  text-align: center;
+}
+/* Header styles */
+/* ---------------------------------------------------------- */
+.mat-header-cell {
+  background-color: #393939;
+  color: white;
+}
+.mat-header-cell:not(:first-child) {
+  padding-left: 0;
+  text-transform: uppercase;
+}
+
+/* Style just the text in the header */
+.mat-header-cell span {
+  font-weight: 600;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+}
+/* Round the top table corners */
+.mat-header-cell:first-child {
+  border-top-left-radius: 5px;
+}
+.mat-header-cell:last-child {
+  border-top-right-radius: 5px;
+}
+
+.mat-header-row {
+  height: 3em;
+}
+
+/* Row styles */
+/* ---------------------------------------------------------- */
+.mat-row:nth-child(2n) {
+  background-color: #f2f2f2;
+}
+/* ---------------------------------------------------------- */

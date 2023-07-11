@@ -1,0 +1,19 @@
+<div class="login-wrapper">
+  <form [formGroup]="loginForm" (submit)="login()">
+    <h1 class="text-center">Login Form</h1>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="password" autocomplete="off" matInput formControlName="password" required>
+      </mat-form-field>
+    </div>
+    <button mat-button color="primary" class="mat-raised-button btn-large">Login</button>
+  </form>
+</div>
+
