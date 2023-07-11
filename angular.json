@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "invT": {
+    "journal-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/invT",
+            "outputPath": "dist/journal-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "invT:build:production"
+              "browserTarget": "journal-app:build:production"
             },
             "development": {
-              "browserTarget": "invT:build:development"
+              "browserTarget": "journal-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "invT:build"
+            "browserTarget": "journal-app:build"
           }
         },
         "test": {
@@ -111,13 +111,13 @@
           "options": {
             "prerender": false,
             "ssr": false,
-            "browserTarget": "invT:build:production",
-            "firebaseProject": "invt-ebf71",
-            "firebaseHostingSite": "invt-ebf71"
+            "browserTarget": "journal-app:build:production",
+            "firebaseProject": "work-journal-app",
+            "firebaseHostingSite": "work-journal-app"
           }
         }
       }
     }
   },
-  "defaultProject": "invT"
+  "defaultProject": "journal-app"
 }

@@ -4,12 +4,13 @@
 
 export const environment = {
   firebase: {
-    projectId: 'invt-ebf71',
-    appId: '1:725370798828:web:44b8488a6360610a039bc9',
-    storageBucket: 'invt-ebf71.appspot.com',
-    apiKey: 'AIzaSyDAVc9l_ehv6Ltuy4NmeunRSEktIoe4z3s',
-    authDomain: 'invt-ebf71.firebaseapp.com',
-    messagingSenderId: '725370798828',
+    apiKey: "AIzaSyBe-lkiDcRv9YZ4-SMHcLmaPCbx-4Xm22g",
+    authDomain: "work-journal-app.firebaseapp.com",
+    projectId: "work-journal-app",
+    storageBucket: "work-journal-app.appspot.com",
+    messagingSenderId: "356080434312",
+    appId: "1:356080434312:web:9e1d1eed3fa78d554a733d",
+    measurementId: "G-7FEWL985MX"
   },
   production: false
 };
