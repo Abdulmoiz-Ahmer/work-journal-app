@@ -1,7 +1,7 @@
 <div>
   <div>
-    <mat-toolbar style="width: 100%;">
-      <span><a routerLink="/">InvT</a></span>
+    <mat-toolbar style="width: 100%;" *ngIf="authService.isLoggedIn">
+      <span><a routerLink="/">Work Journal</a></span>
       <span class="example-spacer"></span>
       <a *ngIf="!authService.isLoggedIn" mat-icon-button class="links" aria-label="Login" routerLink="/login">
         Login
