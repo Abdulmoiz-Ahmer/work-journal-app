@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "work-journal-app"
-  }
+    "default": "worksheetfiver",
+    "prod": "worksheetfiver"
+  },
+  "targets": {},
+  "etags": {}
 }

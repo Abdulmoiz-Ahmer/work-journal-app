@@ -33,13 +33,19 @@ export class AuthService {
         console.log(result)
         this.afAuth.authState.subscribe((user) => {
           if (user) {
-            this.router.navigate(['/parts']);
+            this.router.navigate(['/journals']);
           }
         });
       })
       .catch((error) => {
         window.alert(error.message);
       });
+  }
+
+  // Sign up with email/password
+  SignUp(email: string, password: string) {
+    return this.afAuth
+      .createUserWithEmailAndPassword(email, password);
   }
 
   // Sign out

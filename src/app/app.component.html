@@ -1,17 +1,15 @@
 <div>
   <div>
-    <mat-toolbar style="width: 100%;" *ngIf="authService.isLoggedIn">
+    <mat-toolbar style="width: 100%;" *ngIf="authService.isLoggedIn" color="primary">
+      <button mat-icon-button *ngIf="authService.router.url === '/journal/add-new'" routerLink="/">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
       <span><a routerLink="/">Work Journal</a></span>
       <span class="example-spacer"></span>
       <a *ngIf="!authService.isLoggedIn" mat-icon-button class="links" aria-label="Login" routerLink="/login">
         Login
       </a>
-      <a *ngIf="authService.isLoggedIn" mat-icon-button class="links" aria-label="Points" routerLink="/parts">
-        Parts
-      </a>
-      <a *ngIf="authService.isLoggedIn" mat-icon-button class="links" aria-label="Transactions" routerLink="/requests">
-        Requests
-      </a>
+
       <button *ngIf="authService.isLoggedIn" mat-icon-button class="example-icon" aria-label="Logout"
               (click)="authService.SignOut()">
         <mat-icon>lock</mat-icon>
@@ -19,4 +17,7 @@
     </mat-toolbar>
   </div>
   <router-outlet></router-outlet>
+  <button *ngIf="authService.isLoggedIn" mat-icon-button aria-label="Add New" class="journal-add"  routerLink="journal/add-new" color="primary">
+    <mat-icon class="add-new">add_circle</mat-icon>
+  </button>
 </div>

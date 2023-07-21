@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {LoginComponent} from "./login/login.component";
-import {PointsComponent} from "./points/points.component";
 import {AuthGuard} from "./guard/auth.guard";
-import {TransactionsComponent} from "./transactions/transactions.component";
+import {JournalComponent} from "./journal/journal.component";
+import {AddNewComponent} from "./journal/add-new/add-new.component";
 
 const routes: Routes = [
   {
@@ -11,16 +11,16 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'parts',
-    component: PointsComponent,
+    path: 'journals',
+    component: JournalComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'requests',
-    component: TransactionsComponent,
+    path: 'journal/add-new',
+    component: AddNewComponent,
     canActivate: [AuthGuard]
   },
-  { path: '', component: LoginComponent }
+  { path: '', component: JournalComponent }
 ];
 
 @NgModule({

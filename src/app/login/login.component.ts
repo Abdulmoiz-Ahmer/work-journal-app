@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   ) {
 
     if(this.authService.isLoggedIn){
-      this.router.navigate(['parts'])
+      this.router.navigate(['/'])
     }
     this.loginForm = this.formBuilder.group(
       {

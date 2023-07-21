@@ -13,21 +13,23 @@ import {LoginComponent} from './login/login.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
-import {PointsComponent} from "./points/points.component";
-import {TransactionsComponent} from "./transactions/transactions.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import {MatCardModule} from "@angular/material/card";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import { JournalComponent } from './journal/journal.component';
+import { AddNewComponent } from './journal/add-new/add-new.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    PointsComponent,
-    TransactionsComponent
+    JournalComponent,
+    AddNewComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: npm i && npm run build
+      - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_WORK_JOURNAL_APP }}'
-          projectId: work-journal-app
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_WORKSHEETFIVER }}'
+          projectId: worksheetfiver
