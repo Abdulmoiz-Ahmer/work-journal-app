@@ -1,1 +1,79 @@
-<p>add-new works!</p>
+<div class="login-wrapper">
+  <form [formGroup]="journalForm" (submit)="save()">
+    <h1 class="text-center">Add Task</h1>
+    <mat-card>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Address</mat-label>
+          <input type="text" matInput formControlName="address" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Details</mat-label>
+          <input type="textarea" autocomplete="off" matInput formControlName="taskDetail" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <ngx-dropzone class="dropzone" (change)="onSelect($event)" [multiple]="true"
+                      style="width: 90%; margin: 0 auto 20px auto;">
+          <ngx-dropzone-label>{{"Upload Task Pictures Before"}}</ngx-dropzone-label>
+        </ngx-dropzone>
+      </div>
+
+      <div class="images" *ngIf="images.length">
+        <div class="preview" *ngFor="let f of images; let i=index" style="background-image: url({{f.path}})"
+             (click)="onRemove(i, f.name)">
+          <div class="close">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="25px" height="25px">
+              <path fill="#F44336" d="M21.5 4.5H26.501V43.5H21.5z" transform="rotate(45.001 24 24)"/>
+              <path fill="#F44336" d="M21.5 4.5H26.5V43.501H21.5z" transform="rotate(135.008 24 24)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+    <mat-card>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Customer Name</mat-label>
+          <input type="text" matInput formControlName="customerName" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Customer Phone</mat-label>
+          <input type="text" placeholder="+1123456789 or 001123456789" autocomplete="off" matInput
+                 formControlName="customerPhone" required>
+        </mat-form-field>
+      </div>
+    </mat-card>
+    <mat-card>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Final Summary</mat-label>
+          <input type="textarea" autocomplete="off" matInput formControlName="finalSummary" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <ngx-dropzone class="dropzone" (change)="after($event)" [multiple]="true"
+                      style="width: 90%; margin: 0 auto 20px auto;">
+          <ngx-dropzone-label>{{"Upload Task Picture After"}}</ngx-dropzone-label>
+        </ngx-dropzone>
+      </div>
+      <div class="images" *ngIf="afterImages.length">
+        <div class="preview" *ngFor="let f of afterImages; let i=index" style="background-image: url({{f.path}})"
+             (click)="onAfterRemove(i, f.name)">
+          <div class="close">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="25px" height="25px">
+              <path fill="#F44336" d="M21.5 4.5H26.501V43.5H21.5z" transform="rotate(45.001 24 24)"/>
+              <path fill="#F44336" d="M21.5 4.5H26.5V43.501H21.5z" transform="rotate(135.008 24 24)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <button mat-button color="primary" class="mat-raised-button btn-large">Submit</button>
+    </mat-card>
+
+  </form>
+</div>

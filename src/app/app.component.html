@@ -4,7 +4,6 @@
       <button mat-icon-button *ngIf="authService.router.url === '/journal/add-new'" routerLink="/">
         <mat-icon>arrow_back</mat-icon>
       </button>
-      <span><a routerLink="/">Work Journal</a></span>
       <span class="example-spacer"></span>
       <a *ngIf="!authService.isLoggedIn" mat-icon-button class="links" aria-label="Login" routerLink="/login">
         Login
@@ -17,7 +16,7 @@
     </mat-toolbar>
   </div>
   <router-outlet></router-outlet>
-  <button *ngIf="authService.isLoggedIn" mat-icon-button aria-label="Add New" class="journal-add"  routerLink="journal/add-new" color="primary">
+  <button *ngIf="authService.isLoggedIn && authService.router.url === '/journals'" mat-icon-button aria-label="Add New" class="journal-add"  routerLink="journal/add-new" color="primary">
     <mat-icon class="add-new">add_circle</mat-icon>
   </button>
 </div>

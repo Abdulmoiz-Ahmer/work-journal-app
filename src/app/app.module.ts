@@ -22,6 +22,11 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import { JournalComponent } from './journal/journal.component';
 import { AddNewComponent } from './journal/add-new/add-new.component';
 import { SignupComponent } from './signup/signup.component';
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { PasswordResetComponent } from './password-reset/password-reset.component';
+import {NgxDropzoneModule} from "ngx-dropzone";
+import {MatExpansionModule} from "@angular/material/expansion";
 
 @NgModule({
   declarations: [
@@ -29,7 +34,8 @@ import { SignupComponent } from './signup/signup.component';
     LoginComponent,
     JournalComponent,
     AddNewComponent,
-    SignupComponent
+    SignupComponent,
+    PasswordResetComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,11 @@ import { SignupComponent } from './signup/signup.component';
     MatCardModule,
     MatTableModule,
     MatPaginatorModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatGridListModule,
+    MatSnackBarModule,
+    NgxDropzoneModule,
+    MatExpansionModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

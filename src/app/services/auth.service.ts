@@ -2,7 +2,16 @@ import {Injectable} from '@angular/core';
 
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {Router} from "@angular/router";
+import {AngularFirestore, AngularFirestoreDocument} from "@angular/fire/compat/firestore";
 
+export interface User {
+  uid: string;
+  email: string;
+  displayName: string;
+  photoURL: string;
+  emailVerified: boolean;
+  phone: string;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +20,7 @@ export class AuthService {
 
   constructor(
     private afAuth: AngularFireAuth,
+    public afs: AngularFirestore, // Inject Firestore service
     public router: Router,
   ) {
     this.afAuth.authState.subscribe((user) => {
@@ -56,10 +66,40 @@ export class AuthService {
     });
   }
 
+  // Reset Forggot password
+  ForgotPassword(passwordResetEmail: string) {
+    return this.afAuth
+      .sendPasswordResetEmail(passwordResetEmail);
+  }
+
+  /* Setting up user data when sign in with username/password,
+  sign up with username/password and sign in with social auth
+  provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
+  SetUserData(user: any, phone: any) {
+    const userRef: AngularFirestoreDocument<any> = this.afs.doc(
+      `users/${user.uid}`
+    );
+    const userData: User = {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      phone: phone,
+      emailVerified: user.emailVerified
+    };
+    return userRef.set(userData, {
+      merge: true,
+    });
+  }
+
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
     // @ts-ignore
     const user = JSON.parse(localStorage.getItem('user'));
     return (user !== null) ? true : false;
+  }
+
+  userDetails(){
+    return JSON.parse(localStorage.getItem('user')!);
   }
 }
