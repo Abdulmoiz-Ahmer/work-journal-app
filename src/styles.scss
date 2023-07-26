@@ -4,9 +4,18 @@ body {
   height: 100vh;
   margin: 0;
   background: rgb(224 224 224 / 50%);
-
+  .mat-toolbar.mat-primary{
+    background: #000;
+  }
   .example-spacer {
     flex: 1 1 auto;
+  }
+  a{
+    color: #000;
+  }
+
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick, .mat-form-field.mat-focused .mat-form-field-label{
+    color: #000;
   }
 
   .links {
@@ -32,6 +41,7 @@ body {
       height: 50px;
       line-height: 50px;
     }
+
 
   }
 

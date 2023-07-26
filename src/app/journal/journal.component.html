@@ -1,21 +1,25 @@
-<mat-card *ngFor="let journal of journals">
-  <mat-card-content>
-    <mat-label><b>Address:</b> {{journal?.address}}</mat-label>
-    <mat-label><b>Description:</b>{{journal?.taskDetail}}</mat-label>
-    <mat-label><b>Customer Name:</b>{{journal?.customerName}}</mat-label>
-    <mat-label><b>Customer Phone:</b>{{journal?.customerPhone}}</mat-label>
-    <mat-label><b>Final Summary:</b>{{journal?.finalSummary}}</mat-label>
-    <mat-label><b>Additional:</b>{{journal?.additional}}</mat-label>
-    <mat-label *ngIf="journal?.beforeImages.length"><b>Before:</b></mat-label>
-    <div class="images" *ngIf="journal?.beforeImages.length">
-      <div class="preview" *ngFor="let f of journal?.beforeImages; let i=index" style="background-image: url({{f.path}})">
+<div class="journals">
+  <mat-card *ngFor="let journal of journals">
+    <mat-card-content>
+      <mat-label><b>Address:</b> {{journal?.address}}</mat-label>
+      <mat-label><b>Description:</b>{{journal?.taskDetail}}</mat-label>
+      <mat-label><b>Customer Name:</b>{{journal?.customerName}}</mat-label>
+      <mat-label><b>Customer Phone:</b>{{journal?.customerPhone}}</mat-label>
+      <mat-label><b>Final Summary:</b>{{journal?.finalSummary}}</mat-label>
+      <mat-label><b>Additional:</b>{{journal?.additional}}</mat-label>
+      <mat-label *ngIf="journal?.beforeImages.length"><b>Before:</b></mat-label>
+      <div class="images" *ngIf="journal?.beforeImages.length">
+        <div class="preview" *ngFor="let f of journal?.beforeImages; let i=index"
+             style="background-image: url({{f.path}})">
+        </div>
       </div>
-    </div>
-    <mat-label  *ngIf="journal?.afterImages.length"><b>After:</b></mat-label>
-    <div class="images" *ngIf="journal?.afterImages.length">
-      <div class="preview" *ngFor="let f of journal?.afterImages; let i=index" style="background-image: url({{f.path}})">
+      <mat-label *ngIf="journal?.afterImages.length"><b>After:</b></mat-label>
+      <div class="images" *ngIf="journal?.afterImages.length">
+        <div class="preview" *ngFor="let f of journal?.afterImages; let i=index"
+             style="background-image: url({{f.path}})">
+        </div>
       </div>
-    </div>
-    <mat-icon color="warn" (click)="deleteTask(journal?.id)">delete</mat-icon>
-  </mat-card-content>
-</mat-card>
+      <mat-icon color="warn" (click)="deleteTask(journal?.id)">delete</mat-icon>
+    </mat-card-content>
+  </mat-card>
+</div>

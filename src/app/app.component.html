@@ -1,6 +1,6 @@
 <div>
   <div>
-    <mat-toolbar style="width: 100%;" *ngIf="authService.isLoggedIn" color="primary">
+    <mat-toolbar style="width: 100%;" *ngIf="authService.isLoggedIn" color="primary" [ngClass]="{'sticky': 'isSticky'}">
       <button mat-icon-button *ngIf="authService.router.url === '/journal/add-new'" routerLink="/">
         <mat-icon>arrow_back</mat-icon>
       </button>

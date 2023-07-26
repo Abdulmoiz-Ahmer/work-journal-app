@@ -7,7 +7,7 @@ import {AuthService} from "./services/auth.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'invT';
+  isSticky: boolean = true;
   constructor(public authService: AuthService) {
   }
 }
